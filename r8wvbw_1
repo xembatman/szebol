@@ -1,0 +1,40 @@
+from tkinter import*
+
+def gombInput(numbers):
+        global operator
+        operator=operator + str(numbers)
+        text_Input.set(operator)
+def gombReset():
+    global operator
+    global operator=""
+    text_Input.set("")
+def gombInputElvegez():
+    global operator
+    sumup=str(eval(operator))
+    text_Input.set(sumup)
+    operator=""
+szmlgp = Tk()
+szmlgp.titlt("Számológép")
+
+operatir=""
+
+text_Input = StringVar()
+txtDisplay = Entry(szmlgp, font=('courier', 11, 'bolder'), textvariable=text_Input, bd=25, insertwidth=4, bg="turqoise", justify='left').grid(columnspan=3)
+
+
+gomb1=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="1", command=lambda:gombInput(1)).grid(row=1,column=0)
+gomb2=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="2", command=lambda:gombInput(2)).).grid(row=1,column=1)
+gomb3=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="3", command=lambda:gombInput(3)).grid(row=1,column=2)
+gombHozzaad=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="+", command=lambda:gombInput(+)).grid(row=1,column=3)
+gomb4=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="4", command=lambda:gombInput(4)).grid(row=2,column=0)
+gomb5=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="5", command=lambda:gombInput(5)).grid(row=2,column=1)
+gomb6=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="6", command=lambda:gombInput(6)).grid(row=2,column=2)
+gombLevonas=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="-", command=lambda:gombInput(-)).grid(row=2,column=3)
+gomb7=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="7", command=lambda:gombInput(7)).grid(row=3,column=0)
+gomb8=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="8", command=lambda:gombInput(8)).grid(row=3,column=1)
+gomb9=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="9", command=lambda:gombInput(9)).grid(row=3,column=2)
+gombSzoroz(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="*", command=lambda:gombInput(*)).grid(row=3,column=3)
+gombElvegez(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="=", command=lambda:gombInputgombInputElvegez).grid(row=4,column=0)
+gomb0=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="0", command=lambda:gombInput(0)).grid(row=4,column=1)
+gombReset=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="C", command=gombReset).grid(row=4,column=2)
+gombOsztas=Button(szmlgp, padx=10, bd=5, fg="navy", font=('courier', 11, 'normal'), text="/", command=lambda:gombInput(/)).grid(row=4,column=3)
